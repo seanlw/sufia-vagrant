@@ -67,6 +67,6 @@ rails generate roles
 rake db:migrate
 
 echo -n "Installing Solr configuration files"
-sudo cp -f "$HOME_DIR/sufia_app/solr_config/conf/schema.xml" "$SOLR_HOME/collection1/conf"
-sudo cp -f "$HOME_DIR/sufia_app/solr_config/conf/solrconfig.xml" "$SOLR_HOME/collection1/conf"
+sudo cp -f "$HOME_DIR/sufia_app/solr_conf/conf/schema.xml" "$SOLR_HOME/collection1/conf"
+sudo cp -f "$HOME_DIR/sufia_app/solr_conf/conf/solrconfig.xml" "$SOLR_HOME/collection1/conf"
 sudo service tomcat7 restart
