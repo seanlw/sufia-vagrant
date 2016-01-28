@@ -31,5 +31,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/sufia.sh", privileged: false, args: shared_dir
 
   config.vm.provision "shell", inline: "cd /home/vagrant/sufia_app && rails s -b 0.0.0.0 -d", privileged: false, run: "always"
+  config.vm.provision "shell", inline: "cd /home/vagrant/sufia_app && RUN_AT_EXIT_HOOKS=true TERM_CHILD=1 bundle exec resque-pool --daemon --environment development start", privileged: false, run: "always"
 
 end
